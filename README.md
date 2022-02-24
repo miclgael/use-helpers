@@ -1,6 +1,6 @@
 # use-helpers
 
-Collection of helper functions
+Set of helper functions designed for use with Vue/React
 
 ## Install
 
