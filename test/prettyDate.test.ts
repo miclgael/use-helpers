@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { useHelpers } from "../useHelpers";
+import { useHelpers } from "../index";
 
 describe("pretty date function", () => {
   test("converts date object to pretty formatted date", async () => {

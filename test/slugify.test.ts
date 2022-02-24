@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { useHelpers } from "../useHelpers";
+import { useHelpers } from "../index";
 
 describe("slugs", () => {
   test("converts stupid sentence to clean slug", async () => {
