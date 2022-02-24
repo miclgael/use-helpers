@@ -14,5 +14,5 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true
   },
-  "include": ["useHelpers.ts"]
+  "include": ["index.ts"]
 }
