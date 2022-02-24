@@ -1,7 +1,6 @@
 {
   "name": "@miclgael/use-helpers",
   "description": "Set of helper functions designed for use with Vue/React",
-  "private": true,
   "version": "0.0.1",
   "author": "Michael Gale <michael@michaelgale.dev> (https://www.michaelgale.dev)",
   "keywords": [
