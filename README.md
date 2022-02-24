@@ -11,6 +11,10 @@ npm install --save-dev @miclgael/use-helpers
 ## Usage example
 
 ```ts
-import { useHelpers } from "use-helpers";
-const { commaSeparator, slugify, prettyDate } = useHelpers();
+import { useHelpers } from "@miclgael/use-helpers";
+const { slugify } = useHelpers();
+
+const slug = slugify("Stupidly long title with MIXed and special chars!@#$%");
+
+console.log(slug); // "stupidly-long-title-with-mixed-and-special-chars"
 ```
