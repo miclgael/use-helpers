@@ -1,0 +1,23 @@
+{
+  "name": "@miclgael/use-helpers",
+  "description": "Set of helper functions designed for use with Vue/React",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Michael Gale <michael@michaelgale.dev> (https://www.michaelgale.dev)",
+  "keywords": [
+    "use-helpers",
+    "helpers",
+    "vue-use",
+    "helper functions"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "test": "src/useHelpers.ts",
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "vitest": "^0.5.5"
+  },
+  "license": "MIT"
+}
