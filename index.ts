@@ -22,8 +22,8 @@ export function useHelpers() {
    * Normalise a string and make it url (or v-for key) safe
    * @since   0.0.1
    *
-   * @param   {string}  title  Any string; with spaces or goofy -- characters
-   * @return  {string}         any-string-with-spaces-or-goofy-characters
+   * @param   {string}  title  - e.g. Any string; with spaces or goofy -- characters
+   * @return  {string}         - e.g. any-string-with-spaces-or-goofy-characters
    */
   const slugify = (title: string): string => {
     return title
@@ -39,9 +39,8 @@ export function useHelpers() {
    * Convert date to standard date string style
    * @since   0.0.1
    *
-   * @param   {Date}    date  machine readable date as stored, for example in a database
-   *
-   * @return  {string}        human readable date, as might be seen on a blog
+   * @param   {Date}    date  - machine readable date as stored, for example in a database
+   * @return  {string}        - human readable date, as might be seen on a blog
    */
   const prettyDate = (date: Date): string => {
     return new Date(date).toLocaleString("en-AU", {
