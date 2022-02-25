@@ -10,7 +10,7 @@
     "helper functions"
   ],
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --reporter verbose",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "preversion": "npm run test:run",

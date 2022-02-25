@@ -52,6 +52,19 @@ export function useHelpers() {
   };
 
   /**
+   * Trim a large string to 300 words or less, and add ellipsis
+   * @since   0.0.8
+   *
+   * @param   {string}  textField - long text field
+   * @param   {number}  cutPoint  - point at which to cut text off (default: 300)
+   * @return  {string}            - excerpt
+   */
+  const excerptify = (textField: string, cutPoint: number = 300): string => {
+    if (textField.trim().length <= cutPoint) return textField.trim();
+    return textField.trim().substring(-1, cutPoint) + "...";
+  };
+
+  /**
    * Find matching array object by its id
    *
    * @since   0.0.2
@@ -72,5 +85,6 @@ export function useHelpers() {
     slugify,
     prettyDate,
     getIndexById,
+    excerptify,
   };
 }
