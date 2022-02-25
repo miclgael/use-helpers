@@ -12,7 +12,8 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "typeRoots": ["./types/common/interfaces"]
   },
   "include": ["index.ts"]
 }

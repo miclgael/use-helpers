@@ -1,3 +1,5 @@
+/// <reference types="./types/common/interfaces" />
+
 export function useHelpers() {
   /**
    * Text helper - separate a list of strings by commas/and
@@ -5,7 +7,7 @@ export function useHelpers() {
    *
    * NB: each element should be styled inline-block for white space to be correct.
    *
-   * @param   {string[]} arr    list of words/labels
+   * @param   {string[]} list    list of words/labels
    * @param   {number}   count  current iteration of loop
    *
    * @return  {string}         sentence e.g. `one, two and three`
@@ -47,9 +49,24 @@ export function useHelpers() {
     });
   };
 
+  /**
+   * Find matching array object by its id
+   *
+   * @param   {string}           id        e.g. ID of release, `OH-xxx`
+   * @param   {ObjectList}       arr
+   * @return  {object|undefined}           Matching item (if found)
+   */
+  const getIndexById = (
+    id: string,
+    arr: UseHelpers.GenericObjectList[]
+  ): object | undefined => {
+    return arr.find((index) => index.id === id);
+  };
+
   return {
     commaSeparator,
     slugify,
     prettyDate,
+    getIndexById,
   };
 }
