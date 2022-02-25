@@ -61,9 +61,10 @@ export function useHelpers() {
    */
   const getIndexById = (
     id: string,
-    arr: UseHelpers.GenericObjectList[]
+    list: UseHelpers.GenericObject[]
   ): object | undefined => {
-    return arr.find((index) => index.id === id);
+    return list.find((index) => index.id === id);
+  };
   };
 
   return {
