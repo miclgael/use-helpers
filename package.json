@@ -11,8 +11,9 @@
   ],
   "scripts": {
     "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "preversion": "npm test",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "preversion": "npm test:run",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
   },
