@@ -9,6 +9,10 @@
     "vue-use",
     "helper functions"
   ],
+  "repository": {
+    "url": "git@github.com/miclgael/use-helpers.git",
+    "type": "git"
+  },
   "scripts": {
     "test": "vitest --reporter verbose",
     "test:run": "vitest run",
