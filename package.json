@@ -15,7 +15,7 @@
     "test:coverage": "vitest run --coverage",
     "preversion": "npm run test:run",
     "version": "git add -A",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "test": "src/useHelpers.ts",
   "main": "index.ts",
