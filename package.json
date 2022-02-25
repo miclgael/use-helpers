@@ -13,7 +13,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "preversion": "npm test:run",
+    "preversion": "npm run test:run",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
   },
