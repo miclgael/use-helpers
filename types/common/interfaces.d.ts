@@ -1,5 +1,5 @@
 declare namespace UseHelpers {
-  export interface GenericObjectList {
+  export interface GenericObject {
     [key: string]: any;
   }
 }

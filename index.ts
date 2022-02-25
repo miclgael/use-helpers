@@ -6,6 +6,7 @@ export function useHelpers() {
    * e.g. `one, two and three`. To be used in a loop.
    *
    * NB: each element should be styled inline-block for white space to be correct.
+   * @since   0.0.1
    *
    * @param   {string[]} list    list of words/labels
    * @param   {number}   count  current iteration of loop
@@ -19,6 +20,7 @@ export function useHelpers() {
 
   /**
    * Normalise a string and make it url (or v-for key) safe
+   * @since   0.0.1
    *
    * @param   {string}  title  Any string; with spaces or goofy -- characters
    * @return  {string}         any-string-with-spaces-or-goofy-characters
@@ -35,6 +37,7 @@ export function useHelpers() {
 
   /**
    * Convert date to standard date string style
+   * @since   0.0.1
    *
    * @param   {Date}    date  machine readable date as stored, for example in a database
    *
@@ -52,9 +55,10 @@ export function useHelpers() {
   /**
    * Find matching array object by its id
    *
-   * @param   {string}           id        e.g. ID of release, `OH-xxx`
-   * @param   {ObjectList}       arr
-   * @return  {object|undefined}           Matching item (if found)
+   * @since   0.0.2
+   * @param   { string }              id     - e.g. ID of release, `OH-xxx`
+   * @param   { GenericObject[] }     list   - object[] with `id` property
+   * @return  { object|undefined }           - Matching item (if found)
    */
   const getIndexById = (
     id: string,
