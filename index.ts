@@ -78,6 +78,22 @@ export function useHelpers() {
   ): object | undefined => {
     return list.find((index) => index.id === id);
   };
+
+  /**
+   * Reduce to array calculate total
+   * @since   0.0.8
+   * @param   { GenericObject[] }  productList - object[] with `id` property
+   * @return  { number }                       - (float) total cost e.g. `0.00`
+   */
+  const calculateTotal = (productList: UseHelpers.GenericObject[]): number => {
+    const total = productList
+      .reduce((acc: any, product: any) => {
+        if (!product.price) throw new Error("price expected");
+        return (acc += product.price);
+      }, 0)
+      .toFixed(2);
+
+    return parseFloat(total);
   };
 
   return {
@@ -85,6 +101,7 @@ export function useHelpers() {
     slugify,
     prettyDate,
     getIndexById,
+    calculateTotal,
     excerptify,
   };
 }
