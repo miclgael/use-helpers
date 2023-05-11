@@ -100,6 +100,17 @@ export function useHelpers() {
   };
 
   /**
+   * Pluralise a word based on a number
+   * @since   0.0.12
+   * @param   {number}  number  - number of items
+   * @param   {string}  word    - word to pluralise
+   * @return  {string}          - e.g. `1 item` or `2 items`
+   */
+  const pluralise = (number: number, word: string) => {
+    return number === 1 ? `${number} ${word}` : `${number} ${word}s`
+  }
+
+  /**
    * Get the semver number from the `package.json` in the given directory
    * @since   0.0.11
    * @param   {string}  dir  - relative path, e.g. '.' OR process.env.PWD
@@ -119,6 +130,7 @@ export function useHelpers() {
     getIndexById,
     calculateTotal,
     excerptify,
-    getCurrentAppVersion,
+    pluralise,
+    getCurrentAppVersion
   };
 }
