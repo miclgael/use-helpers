@@ -101,7 +101,7 @@ export function useHelpers() {
 
   /**
    * Pluralise a word based on a number
-   * @since   0.0.14
+   * @since   0.0.15
    * @param   {number}  number  - number of items
    * @param   {string}  word    - word to pluralise
    * @return  {string}          - e.g. `1 item` or `2 items`
