@@ -1,8 +1,6 @@
 /// <reference types="node" />
 /// <reference types="./types/common/interfaces" />
 
-import * as fs from "fs";
-
 export function useHelpers() {
   /**
    * Text helper - separate a list of strings by commas/and
@@ -110,19 +108,6 @@ export function useHelpers() {
     return number === 1 ? `${number} ${word}` : `${number} ${word}s`
   }
 
-  /**
-   * Get the semver number from the `package.json` in the given directory
-   * @since   0.0.11
-   * @param   {string}  dir  - relative path, e.g. '.' OR process.env.PWD
-   * @return  {string}       - current version from the package, e.g. 0.0.1
-   */
-  const getCurrentAppVersion = (dir: string = "."): string => {
-    const { version } = JSON.parse(
-      fs.readFileSync(`${dir}/package.json`).toString()
-    );
-    return version;
-  };
-
   return {
     commaSeparator,
     slugify,
@@ -130,7 +115,6 @@ export function useHelpers() {
     getIndexById,
     calculateTotal,
     excerptify,
-    pluralise,
-    getCurrentAppVersion
+    pluralise
   };
 }
