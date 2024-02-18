@@ -15,9 +15,9 @@ export function useHelpers() {
    * @return  {string}         sentence e.g. `one, two and three`
    */
   const commaSeparator = (list: any, count: number): string => {
-    if (count === list.length - 1) return "";
-    return count === list.length - 2 ? " and " : ", ";
-  };
+    if (count === list.length - 1) return ""
+    return count === list.length - 2 ? " and " : ", "
+  }
 
   /**
    * Normalise a string and make it url (or v-for key) safe
@@ -33,8 +33,8 @@ export function useHelpers() {
       .toLowerCase()
       .replace(/[^\w\s-]/g, "")
       .trim()
-      .replace(/[-\s]+/g, "-");
-  };
+      .replace(/[-\s]+/g, "-")
+  }
 
   /**
    * Convert date to standard date string style
@@ -49,8 +49,8 @@ export function useHelpers() {
       year: "numeric",
       month: "long",
       day: "numeric",
-    });
-  };
+    })
+  }
 
   /**
    * Trim a large string to 300 words or less, and add ellipsis
@@ -61,9 +61,9 @@ export function useHelpers() {
    * @return  {string}            - excerpt
    */
   const excerptify = (textField: string, cutPoint: number = 300): string => {
-    if (textField.trim().length <= cutPoint) return textField.trim();
-    return textField.trim().substring(-1, cutPoint) + "...";
-  };
+    if (textField.trim().length <= cutPoint) return textField.trim()
+    return textField.trim().substring(-1, cutPoint) + "..."
+  }
 
   /**
    * Find matching array object by its id
@@ -77,8 +77,8 @@ export function useHelpers() {
     id: string,
     list: UseHelpers.GenericObject[]
   ): object | undefined => {
-    return list.find((index) => index.id === id);
-  };
+    return list.find((index) => index.id === id)
+  }
 
   /**
    * Reduce to array calculate total
@@ -89,13 +89,13 @@ export function useHelpers() {
   const calculateTotal = (productList: UseHelpers.GenericObject[]): number => {
     const total = productList
       .reduce((acc: any, product: any) => {
-        if (!product.price) throw new Error("price expected");
-        return (acc += product.price);
+        if (!product.price) throw new Error("price expected")
+        return (acc += product.price)
       }, 0)
-      .toFixed(2);
+      .toFixed(2)
 
-    return parseFloat(total);
-  };
+    return parseFloat(total)
+  }
 
   /**
    * Pluralise a word based on a number
@@ -104,8 +104,37 @@ export function useHelpers() {
    * @param   {string}  word    - word to pluralise
    * @return  {string}          - e.g. `1 item` or `2 items`
    */
-  const pluralise = (number: number, word: string) => {
+  const pluralise = (number: number, word: string): string => {
     return number === 1 ? `${number} ${word}` : `${number} ${word}s`
+  }
+
+  /**
+   * Replace words from a specific vocabulary with upper case
+   *
+   * @param   {string}  words  any string of words, e.g. a repo title
+   *
+   * @return  {string}         The same string, with specific words in upper case
+   */
+  const vocabToUppercase = (words: string): string => {
+    const vocabulary = /Une|Mamp|Wp|Json|Sql|Npm|Api|Cms|Ssg|Ccc|Sst/g
+    return words?.replace(vocabulary,
+      match => match?.toUpperCase()
+    )
+  }
+
+  /**
+   * Replace words from a specific vocabulary with lower case
+   *
+   * @param   {string}  words  any string of words, e.g. a repo title
+   *
+   * @return  {string}         The same string, with specific words in lower case
+   */
+  const vocabToLowercase = (words: string): string => {
+    const vocabulary = /Www.|Chia.|Tw.|Issues.|Miclgael|/g
+    return words
+      ?.replace(vocabulary,
+        match => match?.toLowerCase()
+      )
   }
 
   return {
@@ -115,6 +144,8 @@ export function useHelpers() {
     getIndexById,
     calculateTotal,
     excerptify,
-    pluralise
-  };
+    pluralise,
+    vocabToUppercase,
+    vocabToLowercase
+  }
 }
